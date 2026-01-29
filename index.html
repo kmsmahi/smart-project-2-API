@@ -80,7 +80,7 @@
       <!-- main - div for cart,treees,categories -->
       <div class="div-main-1  grid grid-cols-12 gap-x-5">
         <!-- category section -->
-        <section class="category col-span-2 rounded-xl p-3">
+        <section class="category col-span-3 rounded-xl p-3">
         <h1 class="text-[20px] font-bold   rounded-2xl text-green-700">Categories</h1>
 
         <!-- category names -->
@@ -89,34 +89,55 @@
         <div class="grid grid-cols-1 gap-2 sticky top-4" id="category-container">
         
 
-        <button class="flex items-center gap-4 px-4 py-3 rounded-xl bg-white/5 hover:bg-green-500/10 border border-transparent hover:border-green-500/30 transition-all duration-300 group text-left">
+        <button onclick="loadAllTrees()" class="flex items-center gap-4 px-4 py-3 rounded-xl bg-white/5 hover:bg-green-500/10 border border-transparent hover:border-green-500/30 transition-all duration-300 group text-left">
         <div class="p-2 bg-green-500/10 rounded-lg group-hover:bg-green-500 group-hover:text-white transition-colors">
         <i class="fa-solid fa-seedling text-xl text-green-500 group-hover:text-white"></i>
         </div>
-        <span class="font-semibold text-green-700 group-hover:text-green-600">ALL Trees</span>
+        <span class="font-semibold text-green-700 group-hover:text-green-600">All Trees</span>
         </button>
-        <p class="text-xs font-bold text-gray-400 uppercase tracking-widest px-4 mb-2">Filter by Type</p>
+        <p class="text-xs font-bold text-gray-400 uppercase tracking-widest px-4 mb-2">Filter by category</p>
 
-        <button class="flex items-center gap-4 px-4 py-3 rounded-xl bg-white/5 hover:bg-green-500/10 border border-transparent hover:border-green-500/30 transition-all duration-300 group text-left">
-        <div class="p-2 bg-green-500/10 rounded-lg group-hover:bg-green-500 group-hover:text-white transition-colors">
-        <i class="fa-solid fa-seedling text-xl text-green-500 group-hover:text-white"></i>
-        </div>
-        <span class="font-semibold text-green-700 group-hover:text-green-600">Flowering Trees</span>
-        </button>
+        
 
-        <button class="flex items-center gap-4 px-4 py-3 rounded-xl bg-white/5 hover:bg-green-500/10 border border-transparent hover:border-green-500/30 transition-all duration-300 group text-left">
-        <div class="p-2 bg-green-500/10 rounded-lg group-hover:bg-green-500 group-hover:text-white transition-colors">
-        <i class="fa-solid fa-seedling text-xl text-green-500 group-hover:text-white"></i>
-        </div>
-        <span class="font-semibold text-green-700 group-hover:text-green-600">Flowering Trees</span>
-        </button>
+        
         </div>
         </section>
 
       </section>
 
       <!-- tree list by category section -->
-       <section class="tree-list col-span-7 p-3">
+       <section class="tree-list col-span-6 p-3" id="tree-list-container">
+        <!-- tree list container -->
+         <div class="" id="food-container">
+          <!-- sample card  -->
+          <div class="p-5 bg-white flex gap-3 shadow rounded-xl">
+            <div class="img flex-1">
+              <img
+                src="https://www.themealdb.com/images/media/meals/1520081754.jpg"
+                alt=""
+                class="w-[160px] rounded-xl h-[160px] object-cover"
+              />
+            </div>
+            <div class="flex-2">
+              <h1 class="text-xl font-bold">
+                Roast fennel and aubergine paella
+              </h1>
+
+              <div class="badge badge-warning">Vegan</div>
+
+              <div class="divider divider-end">
+                <h2 class="text-yellow-600 font-semibold">
+                  $ <span class="price">560</span> BDT
+                </h2>
+              </div>
+
+              <button class="btn btn-warning">
+                <i class="fa-solid fa-square-plus"></i>
+                Add This Item
+              </button>
+            </div>
+          </div>
+        </div>
 
        </section>
       </div>
