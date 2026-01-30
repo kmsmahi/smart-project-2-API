@@ -1,5 +1,5 @@
 
-// 1. load Categories
+// load Categories
 const loadCategory = () => {
     fetch('https://openapi.programming-hero.com/api/categories')
     .then((res) => res.json())
@@ -10,7 +10,7 @@ const loadCategory = () => {
 let cart=[];
 let total=0;
 
-// 2. Display Categories in Sidebar
+// Display Categories
 const displaycategory = (categories) => {
     const categoryContainer = document.getElementById('category-container');
     categoryContainer.innerHTML = '';
@@ -32,7 +32,7 @@ const displaycategory = (categories) => {
     categories.forEach(category => {
         const categoryDiv = document.createElement('div');
         categoryDiv.innerHTML = `
-        <button onclick="handleCategoryClick(this,'${category.id}')" class="category-btn active-btn w-full flex items-center gap-4 px-4 py-3 rounded-xl hover:bg-green-500/10 transition-all group mb-2">
+        <button onclick="handleCategoryClick(this,'${category.id}')" class="category-btn  w-full flex items-center gap-4 px-4 py-3 rounded-xl hover:bg-green-500/10 transition-all group mb-2">
             <div class="p-2 bg-green-500/10 rounded-lg group-hover:bg-green-500 group-hover:text-white transition-colors">
                 <i class="fa-solid fa-leaf text-xl text-green-500 group-hover:text-white"></i>
             </div>
@@ -43,15 +43,23 @@ const displaycategory = (categories) => {
     })
 };
 
-// 3. Load All Trees
+// Load All Trees
 const loadAllTrees = () => {
+    document.getElementById('tree-list-container').innerHTML = ''; 
+    loadSpinner(true);
     fetch('https://openapi.programming-hero.com/api/plants')
     .then((res) => res.json())
-    .then((data) => displayalltrees(data.plants))
-    .catch((err) => console.log(err))
+    .then((data) => {
+        loadSpinner(false);
+        displayalltrees(data.plants)
+    })
+    .catch((err) => {
+        loadSpinner(false);
+        console.log(err);
+    })
 };
 
-// 4. Load Trees by Specific Category
+// Load Trees by Specific Category
 const loadTreesByCategory = (categoryId) => {
     fetch(`https://openapi.programming-hero.com/api/category/${categoryId}`)
     .then((res) => res.json())
@@ -59,11 +67,10 @@ const loadTreesByCategory = (categoryId) => {
     .catch((err) => console.log(err))
 };
 
-// 5. Universal Display Function
+// Universal Display Function
 const displayalltrees = (trees) => {
     const allTreesContainer = document.getElementById('tree-list-container');
     allTreesContainer.innerHTML = '';
-
     if(trees.length === 0) {
         allTreesContainer.innerHTML = `<div class="col-span-full text-center py-20 font-bold text-gray-400">No Trees Found in this Category.</div>`;
         return;
@@ -72,7 +79,7 @@ const displayalltrees = (trees) => {
     trees.forEach((tree) => {
         const treeDiv = document.createElement('div');
         treeDiv.innerHTML = `
-        <div class="card bg-base-100 w-full shadow-xl border border-gray-100 overflow-hidden hover:shadow-2xl transition-all duration-300">
+        <div onclick="loadModal('${tree.id}')" class="card cursor-pointer bg-base-100 w-full shadow-xl border border-gray-100 overflow-hidden hover:shadow-2xl transition-all duration-300">
             <figure class="card-img h-[200px] w-full overflow-hidden">
                 <img src="${tree.image}" alt="${tree.name}" class="w-full h-full object-cover hover:scale-110 transition-all duration-500" />
             </figure>
@@ -94,13 +101,52 @@ const displayalltrees = (trees) => {
         allTreesContainer.append(treeDiv);
     });
 };
+     const loadModal = (treeId) => {
+    fetch(`https://openapi.programming-hero.com/api/plant/${treeId}`)
+    .then((res) => res.json())
+    .then((data) => {
+        if (data.plant) {
+            displayModal(data.plant);
+            const modal = document.getElementById('tree_details_modal');
+            modal.showModal();
+        } else {
+            console.error("Plant data not found in API response", data);
+        }
+    })
+    .catch((err) => console.log("Fetch Error:", err));
+};
+
+     const displayModal = (tree) => {
+    const modalContent = document.getElementById('modal-content');
+    modalContent.innerHTML = `
+        <img src="${tree.image}" class="w-full h-72 object-cover" />
+        <div class="p-6">
+            <h3 class="font-bold text-3xl text-green-800">${tree.name}</h3>
+            <div class="flex gap-2 my-2">
+                <div class="badge badge-secondary">${tree.category}</div>
+                <div class="badge badge-outline">ID: ${tree.id}</div>
+            </div>
+            <p class="py-4 text-gray-600 leading-relaxed">
+                ${tree.description || "This beautiful plant is perfect for your collection. It requires moderate sunlight and regular watering."}
+            </p>
+            
+            <div class="flex justify-between items-center mt-6 border-t pt-4">
+                <div>
+                    <p class="text-xs uppercase text-gray-400 font-bold">Price</p>
+                    <span class="text-2xl font-black text-amber-600">${tree.price} BDT</span>
+                </div>
+                <form method="dialog">
+                    <button class="btn btn-success text-white px-8">Close</button>
+                </form>
+            </div>
+        </div>
+    `;
+};
 
 
 
 
 
-
-loadCategory();
 
 // card-img   card-title  cart-price
 
@@ -195,3 +241,15 @@ const handleCategoryClick=(clickedBtn,categoryId)=>{
         loadTreesByCategory(categoryId);
     }
 };
+
+const loadSpinner=(show)=>{
+    const spinner=document.getElementById('loading-spinner');
+    if(show){
+        spinner.classList.remove('hidden');
+    }else{
+        spinner.classList.add('hidden');
+    }
+};
+
+loadCategory();
+loadAllTrees();
