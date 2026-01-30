@@ -3,149 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>smart-project-2-API</title>
-    <!-- for tailwind + daisy ui -->
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <title>Green Earth - Plant Shop</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <!-- for google font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- for logo font -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- for css -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet">
+
+    <!-- daisyui js -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5/dist/full.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <link rel="stylesheet" href="style.css">
 </head>
-    <body class="body container mx-auto p-4">
+<body class="bg-gray-50 container mx-auto p-4">
     <header>
-      <!-- for navbar -->
-        <div class="navbar pl-4 pr-4 bg-base-100 shadow-sm">
-        <div class="navbar-start">
-        <div class="dropdown">
-        <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
-        </div>
-        <ul
-        tabindex="-1"
-        class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-        <li><a>About</a></li>
-        <li><a>Gallery</a></li>
-        <li><a>Plant a tree</a></li>
-      </ul>
-    </div>
-    <div class="navbar-start flex items-center gap-2">
-    <i class="fa-solid fa-cannabis text-2xl text-amber-400"></i>
-    <h1 class="text-xl text-white font-bold">Green Earth</h1>
-    </div>
-    
-    </div>
-    <div class="navbar-center hidden lg:flex">
-    <ul class="menu menu-horizontal px-1 text-white text-[15px]">
-      <li><a>About</a></li>
-      <li><a>Gallery</a></li>
-      <li><a>Plant a tree</a></li>
-    </ul>
-    </div>
-    <div class="navbar-end">
-     <a class="btn  btn-warning rounded-lg text-[15px]">Plant a tree</a>
-    </div>
-        </div>
-        <!-- for banner -->
-         <section class="banner flex  justify-between items-center   p-4 rounded-lg shadow-md gap-10">
-          <div class="img-1 flex-1 flex justify-center">
-            <img class="w-full h-[300px]" src="assets/hero-leaf1.png" alt="">
-          </div>
-          <div class="desc-banner flex-1 flex flex-col items-center text-center gap-1">
-            <h1 class="font-bold text-[28px] ">Plant a Tree, Grow a Future </h1>
-            <p class="text-gray-700 max-w-md">Join our mission to plant 1 million trees and make the Earth greener for future generations.</p>
-            <div class="btn-banner mt-4">
-            <a class="btn  btn-warning btn-lg rounded-xl text-[15px]">Get Involved</a>
+        <div class="navbar bg-base-100 shadow-sm rounded-xl px-4">
+            <div class="navbar-start flex items-center gap-2">
+                <i class="fa-solid fa-cannabis text-2xl text-amber-400"></i>
+                <h1 class="text-xl font-bold text-white">Green Earth</h1>
             </div>
-          </div>
-          <div class="img-2 flex-1 flex justify-center">
-            <img class="w-full h-[300px]" src="assets/hero-leaf2.png" alt="">
-          </div>
+            <div class="navbar-center hidden lg:flex">
+                <ul class="menu menu-horizontal px-1 text-white text-[15px] font-semibold gap-2">
+                    <li><a>About</a></li>
+                    <li><a>Gallery</a></li>
+                    <li><a>Plant a tree</a></li>
+                </ul>
+            </div>
+            <div class="navbar-end">
+                <a class="btn btn-warning">Get Involved</a>
+            </div>
+        </div>
 
-         </section>
+        <section class="banner flex justify-between items-center p-8 bg-green-50 mt-6 rounded-3xl gap-10">
+            <div class="flex-1 hidden md:block">
+                <img class="w-full h-[250px] object-contain" src="assets/hero-leaf1.png" alt="">
+            </div>
+            <div class="flex-1 text-center">
+                <h1 class="font-black text-4xl text-green-900 mb-4">Plant a Tree, Grow a Future</h1>
+                <p class="text-gray-600 mb-6">Join our mission to plant 1 million trees and make the Earth greener.</p>
+                <button class="btn btn-warning btn-lg">Plant a tree</button>
+            </div>
+            <div class="flex-1 hidden md:block">
+                <img class="w-full h-[250px] object-contain" src="assets/hero-leaf2.png" alt="">
+            </div>
+        </section>
     </header>
 
-    <!-- header part completed -->
-
-
-    <!-- main part for category,tree list,cart list,about campaign and impact -->
-     
-
-    <main class="main-class w-full min-h-screen p-8">
-      <!-- choose your trees -->
-      <div class="w-full col-span-full text-center mt-10 mb-2"><h1 class="text-[20px] font-bold rounded-2xl">Choose Your Trees</h1></div>
-      <!-- main - div for cart,treees,categories -->
-      <div class="div-main-1  grid grid-cols-12 gap-x-5">
-        <!-- category section -->
-        <section class="category col-span-3 rounded-xl p-3">
-        <h1 class="text-[20px] font-bold   rounded-2xl text-green-700">Categories</h1>
-
-        <!-- category names -->
-         <div class="divider"></div>
-        <!-- categories  -->
-        <div class="grid grid-cols-1 gap-2 sticky top-4" id="category-container">
-        </div>
-        </section>
-
-      </section>
-
-      <!-- tree list by category section -->
-      <section class="tree-list col-span-6 p-3">
-      <div id="loading-spinner" class="hidden flex justify-center py-10">
-        <span class="loading loading-bars loading-lg text-green-600"></span>
-      </div>
-
-      <div id="tree-list-container" class="grid grid-cols-1 gap-4"></div>
-      </section>
-
-       <!-- add to cart section -->
-         <section
-        class="col-span-3 p-3 bg-white border-green-700 border-2 rounded-xl sticky top-4 h-fit"
-      >
-        <h1 class="text-xl font-bold text-center rounded-2xl">Cart</h1>
-        <div class="divider"></div>
-        <div class="" id="cart-container">
-          <!-- sample cart -->
-
-          
-
-          
-        </div>
-
-        <div class="bg-green-700 mt-10 rounded-xl">
-             <h2 class="p-2 text-white font-bold text-center">Total $<span class="cart-total">0</span>BDT</h2>
-             </div>
-
+    <main class="w-full min-h-screen mt-10">
+        <h2 class="text-3xl font-bold text-center mb-8">Choose Your Trees</h2>
         
-      </section>
-      </div>
+        <div class="grid grid-cols-12 gap-6">
+            <aside class="col-span-12 md:col-span-3">
+                <div class="bg-white p-4 rounded-2xl shadow-sm sticky top-4">
+                    <h3 class="text-lg font-bold text-green-700 mb-4">Categories</h3>
+                    <div id="category-container" class="flex flex-col gap-2"></div>
+                </div>
+            </aside>
 
- 
-    </main>
-   
+            <section class="col-span-12 md:col-span-6">
+                <div id="loading-spinner" class="hidden flex justify-center py-10">
+                    <span class="loading loading-bars loading-lg text-green-600"></span>
+                </div>
+                <div id="tree-list-container" class="grid grid-cols-1 gap-6"></div>
+            </section>
+
+            <aside class="col-span-12 md:col-span-3">
+                <div class="bg-white p-4 rounded-2xl shadow-sm border-2 border-green-100 sticky top-4">
+                    <h3 class="text-xl font-bold text-center mb-4">Your Cart</h3>
+                    <div id="cart-container" class="space-y-3"></div>
+                    <div class="bg-green-700 mt-6 p-3 rounded-xl text-center">
+                        <p class="text-white font-bold">Total: <span class="cart-total">0</span> BDT</p>
+                    </div>
+                </div>
+            </aside>
+        </div>
 
 
+        <!-- ABOUT THE CAMPAIGN -->
+         <div><h1 class="text-5xl font-bold text-center mt-20 mb-6">About Our Campaign</h1></div>
+         <div class="hero bg-base-200 min-h-screen">
+         <div class="hero-content mx-auto flex-col lg:flex-row">
+         <img
+         src="assets/about.png"
+         class="max-w-sm rounded-lg shadow-2xl"
+         />
+         <div>
+         <p class="py-6">
+         Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
+         quasi. In deleniti eaque aut repudiandae et a id nisi.
+         </p>
+         <button class="btn btn-primary">Get Started</button>
+         </div>
+         </div>
+         </div>
+         </main>
 
-    <footer></footer>
-
-    <dialog id="tree_details_modal" class="modal">
-    <div class="modal-box max-w-2xl p-0 overflow-hidden relative">
-    <form method="dialog">
-      <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 z-10 bg-white/50">✕</button>
-    </form>
     
-    <div id="modal-content"></div>
-    </div>
-
-    <form method="dialog" class="modal-backdrop">
-    <button>close</button>
-    </form>
-    </dialog>
 
 
+    
     <script src="index.js"></script>
+
 </body>
-</html> 
+</html>

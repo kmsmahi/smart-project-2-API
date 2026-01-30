@@ -11,10 +11,16 @@
     background: rgb(240, 248, 255);
 }
 
-.active-btn {
+/* .active-btn {
     background-color: #16a34a !important;
     color: white !important;
 }
 .active-btn i, .active-btn span {
     color: white !important;
+} */
+
+.active-btn {
+    background-color: #dcfce7 !important; /* Tailwind green-100 */
+    border-color: #16a34a !important;     /* Tailwind green-600 */
+    color: #16a34a;
 }
