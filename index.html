@@ -94,38 +94,38 @@
 
       <!-- tree list by category section -->
        <section class="tree-list col-span-6 p-3 grid grid-cols-1 gap-4" id="tree-list-container">
+        <div id="loading-spinner" class="hidden flex justify-center items-center py-20">
+        <span class="loading loading-bars loading-lg text-green-600"></span>
+        </div>
         <!-- tree list container -->
          <div class="" id="tree-container">
-          <!-- <div class="card bg-base-100 w-96 shadow-sm">
-          <figure>
-          <img
-          src="${tree.image}"
-          alt="Trees" />
-          </figure>
-          <div class="card-body">
-          <h2 class="card-title">
-          ${tree.name}
-          <div class="badge badge-secondary">${tree.category}</div>
-          </h2>
-          <p>${tree.description}</p>
-          <div class="card-actions justify-end">
-            <div class="divider divider-end">
-                <h2 class="text-amber-600 font-semibold">
-                  $ <span class="price">${tree.price}</span> BDT
-                </h2>
-              </div>
-          <button class="btn btn-warning">
-                <i class="fa-solid fa-square-plus"></i>
-                Add This Tree
-              </button>
-          </div>
-          </div>
-          </div> -->
+
           
             
         </div>
 
        </section>
+
+       <!-- add to cart section -->
+         <section
+        class="col-span-3 p-3 bg-white border-green-700 border-2 rounded-xl sticky top-4 h-fit"
+      >
+        <h1 class="text-xl font-bold text-center rounded-2xl">Cart</h1>
+        <div class="divider"></div>
+        <div class="" id="cart-container">
+          <!-- sample cart -->
+
+          
+
+          
+        </div>
+
+        <div class="bg-green-700 mt-10 rounded-xl">
+             <h2 class="p-2 text-white font-bold text-center">Total $<span class="cart-total">0</span>BDT</h2>
+             </div>
+
+        
+      </section>
       </div>
 
  
@@ -140,4 +140,4 @@
 
     <script src="index.js"></script>
 </body>
-</html>
+</html> 

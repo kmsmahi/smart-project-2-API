@@ -10,3 +10,11 @@
 .main-class{
     background: rgb(240, 248, 255);
 }
+
+.active-btn {
+    background-color: #16a34a !important;
+    color: white !important;
+}
+.active-btn i, .active-btn span {
+    color: white !important;
+}
