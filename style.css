@@ -24,3 +24,13 @@
     border-color: #16a34a !important;     /* Tailwind green-600 */
     color: #16a34a;
 }
+
+.about-cam-p{
+    color: var(--Neutral/Dark, rgba(31, 41, 55, 1));
+    opacity: 0.8;
+
+}
+
+.impact{
+    background: rgba(220, 252, 231, 1);
+}
