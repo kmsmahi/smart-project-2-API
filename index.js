@@ -81,7 +81,12 @@ const displayTrees = (trees) => {
                    ${tree.category}
                 </div>
                 </div>
-                <p class="text-sm text-gray-500 line-clamp-2">${tree.description || 'A beautiful addition to your green space.'}</p>
+                <p class="text-xs md:text-sm text-gray-500 
+                line-clamp-2 md:line-clamp-3 
+                leading-relaxed 
+                overflow-hidden">
+                ${tree.description || 'A beautiful addition to your green space.'}
+                </p>
                 <div class="card-actions justify-between items-center mt-4">
                     <p class="text-xl font-bold text-amber-600">${tree.price} <span class="text-xs">BDT</span></p>
                     <button onclick="event.stopPropagation(); addToCart(event, '${tree.id}', '${tree.name}', ${tree.price}, '${tree.image}')" 
