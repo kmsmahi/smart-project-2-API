@@ -103,7 +103,6 @@ const loadModal = (id) => {
     fetch(`https://openapi.programming-hero.com/api/plant/${id}`)
         .then(res => res.json())
         .then(data => {
-            // The API returns the object inside the "plants" key
             if (data.status && data.plants) {
                 displayModal(data.plants);
             } else {
@@ -185,7 +184,6 @@ const updateCartUI = () => {
 
     cart.forEach((item, index) => {
         const div = document.createElement('div');
-        // Added 'justify-between' and removed 'relative' to ensure space for the button
         div.className = "flex items-center gap-3 p-3 bg-gray-50 rounded-xl border border-gray-100 group transition-all";
         
         div.innerHTML = `
