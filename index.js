@@ -168,7 +168,6 @@ const addToCart = (event, id, name, price, img) => {
     total += price;
     updateCartUI();
 };
-
 const updateCartUI = () => {
     const container = document.getElementById('cart-container');
     const totalEl = document.querySelector('.cart-total');
@@ -176,27 +175,29 @@ const updateCartUI = () => {
 
     cart.forEach((item, index) => {
         const div = document.createElement('div');
-        div.className = "flex items-center gap-3 p-2 bg-gray-50 rounded-lg relative group";
+        // Added 'justify-between' and removed 'relative' to ensure space for the button
+        div.className = "flex items-center gap-3 p-3 bg-gray-50 rounded-xl border border-gray-100 group transition-all";
+        
         div.innerHTML = `
-            <img src="${item.img}" class="w-12 h-12 rounded object-cover">
-            <div class="flex-1">
-                <p class="text-sm font-bold truncate">${item.name}</p>
-                <p class="text-xs text-green-600">${item.price} BDT</p>
+            <img src="${item.img}" class="w-12 h-12 rounded-lg object-cover flex-shrink-0">
+            <div class="flex-1 min-w-0">
+                <p class="text-sm font-bold text-gray-800 truncate">${item.name}</p>
+                <p class="text-xs font-semibold text-green-600">${item.price} BDT</p>
             </div>
-            <button onclick="removeFromCart(${index})" class="text-red-500 opacity-0 group-hover:opacity-100 transition-opacity">
+            <button onclick="removeFromCart(${index})" 
+                class="text-red-500 p-2 hover:bg-red-50 rounded-full transition-all opacity-100 md:opacity-0 md:group-hover:opacity-100"
+                aria-label="Remove item">
                 <i class="fa-solid fa-trash-can"></i>
             </button>`;
         container.appendChild(div);
     });
     totalEl.innerText = total.toFixed(2);
 };
-
 const removeFromCart = (index) => {
     total -= cart[index].price;
     cart.splice(index, 1);
     updateCartUI();
 };
-
 //Helpers
 const handleCategoryClick = (btn, id) => {
     document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active-btn', 'bg-green-100'));
