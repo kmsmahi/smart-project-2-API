@@ -44,6 +44,7 @@ function getDiscount(price) {
 // ES6 Arrow Function
 const getDiscount = (price) => price * 0.1;
 
+---
 
 ## 4. Destructuring Assignment
 
@@ -58,6 +59,8 @@ console.log(treeName); // Output: Bonsai
 const colors = ["Green", "Brown", "White"];
 const [primary, secondary] = colors;
 console.log(primary); // Output: Green
+
+---
 
 ## 5. Template Literals
 
