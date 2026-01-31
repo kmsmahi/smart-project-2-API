@@ -74,7 +74,12 @@ const displayTrees = (trees) => {
             <div class="card-body w-2/3 p-4">
                 <div class="flex justify-between">
                     <h2 class="card-title text-green-900">${tree.name}</h2>
-                    <div class="badge badge-outline">${tree.category}</div>
+                    <div class="badge badge-outline 
+                    text-[10px] md:text-xs 
+                    px-2 py-3 md:px-3 md:py-4 
+                    whitespace-nowrap max-w-fit">
+                   ${tree.category}
+                </div>
                 </div>
                 <p class="text-sm text-gray-500 line-clamp-2">${tree.description || 'A beautiful addition to your green space.'}</p>
                 <div class="card-actions justify-between items-center mt-4">
