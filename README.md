@@ -43,3 +43,40 @@ function getDiscount(price) {
 
 // ES6 Arrow Function
 const getDiscount = (price) => price * 0.1;
+
+
+## 4. Destructuring Assignment
+
+Destructuring is a syntax that allows you to unpack values from arrays or properties from objects into distinct variables. This makes code cleaner and more readable.
+
+const tree = { id: 101, treeName: "Bonsai", cost: 1200 };
+
+// Extracting properties into variables
+const { treeName, cost } = tree;
+console.log(treeName); // Output: Bonsai
+
+const colors = ["Green", "Brown", "White"];
+const [primary, secondary] = colors;
+console.log(primary); // Output: Green
+
+## 5. Template Literals
+
+Template literals are string literals allowing embedded expressions. They use backticks (``) instead of single or double quotes.
+
+How they differ from String Concatenation:
+
+1.Syntax: Concatenation uses the + operator, while template literals use ${expression}.
+
+2.Readability: Template literals are much easier to read when dealing with multiple variables.
+
+3.Multi-line Strings: You can create strings spanning multiple lines without using escape characters like \n.
+
+
+const name = "Mango Tree";
+const price = 500;
+
+// Traditional Concatenation
+console.log("The " + name + " is " + price + " BDT.");
+
+// Template Literal
+console.log(`The ${name} is ${price} BDT.`);
