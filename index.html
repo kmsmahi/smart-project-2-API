@@ -16,9 +16,22 @@
     <header>
         <div class="navbar bg-base-100 shadow-sm rounded-xl px-4">
             <div class="navbar-start flex items-center gap-2">
+                <div class="dropdown">
+                    <div tabindex="0" role="button" class="btn btn-ghost lg:hidden p-0 mr-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
+                        </svg>
+                    </div>
+                    <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 text-gray-800">
+                        <li><a>About</a></li>
+                        <li><a>Gallery</a></li>
+                        <li><a>Plant a tree</a></li>
+                    </ul>
+                </div>
                 <i class="fa-solid fa-cannabis text-2xl text-amber-400"></i>
                 <h1 class="text-xl font-bold text-white">Green Earth</h1>
             </div>
+            
             <div class="navbar-center hidden lg:flex">
                 <ul class="menu menu-horizontal px-1 text-white text-[15px] font-semibold gap-2">
                     <li><a>About</a></li>
@@ -26,8 +39,9 @@
                     <li><a>Plant a tree</a></li>
                 </ul>
             </div>
+            
             <div class="navbar-end">
-                <a class="btn btn-warning">Get Involved</a>
+                <a class="btn btn-warning btn-sm md:btn-md">Get Involved</a>
             </div>
         </div>
 
