@@ -10,27 +10,19 @@
 .main-class{
     background: rgb(240, 248, 255);
 }
-
-/* .active-btn {
-    background-color: #16a34a !important;
-    color: white !important;
-}
-.active-btn i, .active-btn span {
-    color: white !important;
-} */
-
 .active-btn {
-    background-color: #dcfce7 !important; /* Tailwind green-100 */
-    border-color: #16a34a !important;     /* Tailwind green-600 */
+    background-color: #dcfce7 !important; 
+    border-color: #16a34a !important;    
     color: #16a34a;
 }
-
 .about-cam-p{
     color: var(--Neutral/Dark, rgba(31, 41, 55, 1));
     opacity: 0.8;
-
 }
-
 .impact{
     background: rgba(220, 252, 231, 1);
+}
+.footer{
+    background: rgb(4, 117, 38);
+    color: white;
 }

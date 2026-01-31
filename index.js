@@ -79,8 +79,8 @@ const displayTrees = (trees) => {
                 <p class="text-sm text-gray-500 line-clamp-2">${tree.description || 'A beautiful addition to your green space.'}</p>
                 <div class="card-actions justify-between items-center mt-4">
                     <p class="text-xl font-bold text-amber-600">${tree.price} <span class="text-xs">BDT</span></p>
-                    <button onclick="addToCart(event, '${tree.id}', '${tree.name}', ${tree.price}, '${tree.image}')" 
-                            class="btn btn-warning btn-sm">Add to Cart</button>
+                    <button onclick="event.stopPropagation(); addToCart(event, '${tree.id}', '${tree.name}', ${tree.price}, '${tree.image}')" 
+                    class="btn btn-warning btn-sm">Add to Cart</button>
                 </div>
             </div>
         </div>`;
@@ -88,7 +88,78 @@ const displayTrees = (trees) => {
     });
 };
 
+// modal logic
+const loadModal = (id) => {
+    fetch(`https://openapi.programming-hero.com/api/plant/${id}`)
+        .then(res => res.json())
+        .then(data => {
+            // The API returns the object inside the "plants" key
+            if (data.status && data.plants) {
+                displayModal(data.plants);
+            } else {
+                console.error("Plant not found in API response", data);
+            }
+        })
+        .catch(err => console.error('Error loading modal:', err));
+};
 
+const displayModal = (tree) => {
+    const modalDetails = document.getElementById('tree-detail-container');
+    
+    modalDetails.innerHTML = `
+        <div class="relative overflow-hidden rounded-3xl mb-6 group">
+            <img src="${tree.image}" alt="${tree.name}" 
+                 class="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-105">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+            <span class="absolute top-4 left-4 bg-white/90 backdrop-blur-md text-green-800 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest shadow-sm">
+                <i class="fa-solid fa-leaf mr-1"></i> ${tree.category}
+            </span>
+        </div>
+
+        <div class="px-2">
+            <div class="flex justify-between items-start mb-4">
+                <h2 class="text-3xl font-extrabold text-gray-900 tracking-tight">${tree.name}</h2>
+                <div class="text-right">
+                    <span class="block text-xs font-bold text-gray-400 uppercase tracking-tighter">Price</span>
+                    <span class="text-3xl font-black text-green-600">${tree.price}<small class="text-sm ml-1 text-gray-500 font-medium">BDT</small></span>
+                </div>
+            </div>
+
+            <p class="text-gray-500 leading-relaxed mb-8 border-l-4 border-green-100 pl-4 italic">
+                "${tree.description}"
+            </p>
+
+            <div class="grid grid-cols-2 gap-4 mb-8">
+                <div class="bg-green-50 p-4 rounded-2xl flex items-center gap-3">
+                    <div class="w-10 h-10 bg-white rounded-xl flex items-center justify-center text-green-600 shadow-sm">
+                        <i class="fa-solid fa-droplet"></i>
+                    </div>
+                    <div>
+                        <p class="text-[10px] uppercase font-bold text-green-800/50">Watering</p>
+                        <p class="text-sm font-bold text-gray-700">Regular</p>
+                    </div>
+                </div>
+                <div class="bg-orange-50 p-4 rounded-2xl flex items-center gap-3">
+                    <div class="w-10 h-10 bg-white rounded-xl flex items-center justify-center text-orange-500 shadow-sm">
+                        <i class="fa-solid fa-sun"></i>
+                    </div>
+                    <div>
+                        <p class="text-[10px] uppercase font-bold text-orange-800/50">Sunlight</p>
+                        <p class="text-sm font-bold text-gray-700">Full Sun</p>
+                    </div>
+                </div>
+            </div>
+
+            <button class="w-full bg-gray-900 hover:bg-green-700 text-white py-4 rounded-2xl font-bold transition-all duration-300 flex items-center justify-center gap-3 shadow-xl hover:shadow-green-200">
+                <i class="fa-solid fa-cart-plus"></i>
+                Add to Collection
+            </button>
+        </div>
+    `;
+
+    const myModal = document.getElementById('my_modal_1');
+    myModal.showModal();
+}
 
 //Cart Logic
 const addToCart = (event, id, name, price, img) => {

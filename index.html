@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Green Earth - Plant Shop</title>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet"> -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet">
-
-    <!-- daisyui js -->
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@5/dist/full.css" rel="stylesheet">
+    <!-- font awesome css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <link rel="stylesheet" href="style.css">
 </head>
@@ -134,25 +134,119 @@
         </section>
 
         <!-- our impact section -->
-         <section class="impact w-full h-[436px]">
-          <div class="text-center pt-20"><h1 class="text-[32px] font-bold text-gray-700 mb-4">Our Impact</h1></div>
-          <div class="impact-div-container flex ">
-            <div class="div-1 w-[400px] h-[126px] flex flex-col bg-white justify-center items-center p-8 m-10">
-              <h1 class="text-[32px] font-semibold text-green-700">500K+</h1>
-              <h1 class="text-[16px] font-regular text-gray-700">Trees Planted</h1>
-            </div>
-            <div class="div-2 w-[400px] h-[126px] flex flex-col bg-white justify-center items-center p-8 m-10">
-              <h1 class="text-[32px] font-semibold text-green-700">120+</h1>
-              <h1 class="text-[16px] font-regular text-gray-700">Countries Involved</h1>
-            </div>
-            <div class="div-3 w-[400px] h-[126px] flex flex-col bg-white justify-center items-center p-8 m-10">
-              <h1 class="text-[32px] font-semibold text-green-700">30+</h1>
-              <h1 class="text-[16px] font-regular text-gray-700">Countries Reached</h1>
-            </div>
-          </div>
+         <section class="w-full py-24 bg-gray-50">
+         <div class="max-w-7xl mx-auto px-6">
+         <div class="text-center mb-16">
+            <span class="text-green-600 font-bold tracking-widest uppercase text-sm">Real World Results</span>
+            <h2 class="text-4xl font-extrabold text-gray-900 mt-2">Our Impact</h2>
+            <p class="text-gray-500 mt-4 max-w-2xl mx-auto text-lg">
+                Together, we've made significant strides in reforesting the planet and fostering global cooperation.
+            </p>
+        </div>
 
-         </section>
+        <div class="flex flex-wrap justify-center gap-8">
+            
+            <div class="group w-full md:w-80 bg-white rounded-3xl p-10 shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 ease-in-out text-center">
+                <div class="w-16 h-16 bg-green-50 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-green-600 transition-colors duration-300">
+                    <svg class="w-8 h-8 text-green-600 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path></svg>
+                </div>
+                <h3 class="text-4xl font-black text-gray-900 mb-2">500K+</h3>
+                <p class="text-gray-500 font-medium uppercase tracking-wide text-sm">Trees Planted</p>
+            </div>
+
+            <div class="group w-full md:w-80 bg-white rounded-3xl p-10 shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 ease-in-out text-center">
+                <div class="w-16 h-16 bg-green-50 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-green-600 transition-colors duration-300">
+                    <svg class="w-8 h-8 text-green-600 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 20 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"></path></svg>
+                </div>
+                <h3 class="text-4xl font-black text-gray-900 mb-2">120+</h3>
+                <p class="text-gray-500 font-medium uppercase tracking-wide text-sm">Countries Involved</p>
+            </div>
+
+            <div class="group w-full md:w-80 bg-white rounded-3xl p-10 shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 ease-in-out text-center">
+                <div class="w-16 h-16 bg-green-50 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-green-600 transition-colors duration-300">
+                    <svg class="w-8 h-8 text-green-600 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                </div>
+                <h3 class="text-4xl font-black text-gray-900 mb-2">30+</h3>
+                <p class="text-gray-500 font-medium uppercase tracking-wide text-sm">Active Projects</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+<!-- modal part -->
+
+<!-- <button class="btn" onclick="my_modal_1.showModal()">open modal</button> -->
+      <dialog id="my_modal_1" class="modal">
+      <div class="modal-box">
+      <div id="tree-detail-container">
+      
+
+      </div>
+       <div class="modal-action">
+       <form method="dialog">
+        <button class="btn">Close</button>
+        </form>
+        </div>
+        </div>
+        </dialog>
+
+
          </main>
+
+         <!-- footer part -->
+
+        <footer class="mt-20 mx-4 lg:mx-20 mb-10">
+        <div class="relative overflow-hidden bg-green-900 rounded-[3rem] p-8 md:p-16 text-white shadow-2xl">
+        
+        <div class="absolute -top-24 -right-24 w-64 h-64 bg-green-700 rounded-full blur-3xl opacity-50"></div>
+        <div class="absolute -bottom-24 -left-24 w-64 h-64 bg-green-800 rounded-full blur-3xl opacity-50"></div>
+
+        <div class="relative z-10 flex flex-col items-center">
+            <div class="text-center max-w-2xl mb-10">
+                <h2 class="text-4xl md:text-5xl font-black mb-4 tracking-tight">Plant a tree today</h2>
+                <p class="text-green-200 text-lg">Join thousands of others in making the world a greener place. Fill out the form below to get started.</p>
+            </div>
+
+          <div class="w-full max-w-3xl bg-white/10 backdrop-blur-md border border-white/20 p-8 md:p-12 rounded-3xl shadow-inner">
+              <form class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    
+                    <div class="form-control">
+                        <label class="label pb-2 text-green-50 font-semibold tracking-wide uppercase text-xs">Full Name</label>
+                        <input type="text" placeholder="John Doe" class="input input-bordered bg-white/20 border-white/30 text-white placeholder:text-green-200 focus:bg-white focus:text-gray-900 transition-all duration-300" />
+                    </div>
+
+                    <div class="form-control">
+                        <label class="label pb-2 text-green-50 font-semibold tracking-wide uppercase text-xs">Email Address</label>
+                        <input type="email" placeholder="john@example.com" class="input input-bordered bg-white/20 border-white/30 text-white placeholder:text-green-200 focus:bg-white focus:text-gray-900 transition-all duration-300" />
+                    </div>
+
+                    <div class="form-control md:col-span-2">
+                        <label class="label pb-2 text-green-50 font-semibold tracking-wide uppercase text-xs">Number of Trees</label>
+                        <input type="number" placeholder="How many trees would you like to plant?" class="input input-bordered bg-white/20 border-white/30 text-white placeholder:text-green-200 focus:bg-white focus:text-gray-900 transition-all duration-300" />
+                    </div>
+
+                    <div class="md:col-span-2 mt-4">
+                        <button class="btn w-full bg-white hover:bg-green-100 text-green-900 border-none font-bold text-lg h-14 rounded-xl shadow-lg transition-transform active:scale-95">
+                            Plant My Trees Now
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="mt-12 pt-8 border-t border-white/10 w-full text-center text-green-300 text-sm">
+                <p>&copy; 2026 Green Earth Initiative. All rights reserved.</p>
+                <div class="flex justify-center gap-6 mt-4 opacity-70">
+                    <a href="#" class="hover:text-white">Privacy Policy</a>
+                    <a href="#" class="hover:text-white">Terms of Service</a>
+                    <a href="#" class="hover:text-white">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
 
     
 
